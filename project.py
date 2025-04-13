@@ -4,9 +4,6 @@ import streamlit as st
 from cryptography.fernet import Fernet
 import base64
 
-"username = admin"
-"password = admin123"
-
 if 'authenticated' not in st.session_state:
     st.session_state.authenticated = False
 
@@ -34,6 +31,7 @@ def login_page():
     st.title("🔐 Secure Login")
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
+    st.write("username is admin and password is admin123")
     
     if st.button("Login"):
         if username == "admin" and password == "admin123":
